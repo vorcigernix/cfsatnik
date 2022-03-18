@@ -1,17 +1,29 @@
+/* eslint-disable no-undef */
 import { json, useLoaderData } from "remix";
 
 export const loader = async ({ params }) => {
   return json(
-    // eslint-disable-next-line no-undef
     await SATNIK.get(`Jelena`, {
       type: "json",
     })
   );
 };
 
+async function dbRead() {
+  const value = await SATNIK.get("Jelena");
+  if (value === null) {
+    return "No data";
+  }
+
+  return value;
+}
+
 export default function Index() {
   const hadry = useLoaderData();
   console.log(hadry);
+  dbRead().then((data) => {
+    console.log(data);
+  });
   return (
     <div className="bg-gray-200">
       <h1>Welcome to Remix</h1>
