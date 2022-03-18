@@ -1,0 +1,23 @@
+    name = "remix-cloudflare-workers"
+    type = "javascript"
+
+    zone_id = "60a5e10101b817bfdcd23b3cc7ff1258"
+    account_id = "22ddabebbdd34ee695fcc2f0b86dae54"
+    route = ""
+    workers_dev = true
+
+    kv_namespaces = [ 
+        { binding = "SATNIK", preview_id = "3beeefb33b0446a08fa9e6c8c0daddf7", id = "06c605c724c348149774deca707d9665" }
+    ]
+
+    [site]
+    bucket = "./public"
+    entry-point = "."
+
+    [build]
+    command = "npm run build"
+
+    [build.upload]
+    format="service-worker"
+
+
