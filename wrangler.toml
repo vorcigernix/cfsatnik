@@ -9,6 +9,8 @@
     kv_namespaces = [ 
         { binding = "SATNIK", preview_id = "3beeefb33b0446a08fa9e6c8c0daddf7", id = "06c605c724c348149774deca707d9665" }
     ]
+    [miniflare]
+    kv_persist = true 
 
     [site]
     bucket = "./public"

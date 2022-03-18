@@ -9,6 +9,12 @@ export const loader = async ({ params }) => {
   );
 };
 
+async function dbPut() {
+  const result = await SATNIK.put("Jelena", "Super kozačky");
+  return result;
+}
+
+
 async function dbRead() {
   const value = await SATNIK.get("Jelena");
   if (value === null) {
@@ -19,11 +25,12 @@ async function dbRead() {
 }
 
 export default function Index() {
+  dbPut().then((result) => {
+    console.log(result);
+  });
   const hadry = useLoaderData();
   console.log(hadry);
-  dbRead().then((data) => {
-    console.log(data);
-  });
+
   return (
     <div className="bg-gray-200">
       <h1>Welcome to Remix</h1>
