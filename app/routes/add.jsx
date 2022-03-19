@@ -14,8 +14,7 @@ export const action = async ({ request }) => {
     `${status}:${sex}:${id}`,
     JSON.stringify({ description, age, status, created })
   );
-  console.log(result);
-  return null;
+  return redirect(`/`);
 };
 
 export default function Add() {
