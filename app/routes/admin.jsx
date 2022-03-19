@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import { json, useLoaderData, redirect, Link, Outlet } from "remix";
 
-export default function Index() {
+export default function Admin() {
 
   return (
     <section className="text-gray-600 body-font overflow-hidden">

@@ -1,11 +1,10 @@
 /* eslint-disable no-undef */
-import { json, useLoaderData, redirect, Link } from "remix";
+import { json, useLoaderData, Link } from "remix";
 import { getPosts } from "../../data/posts";
 
 export const loader = async ({ params }) => {
-  const { id } = params;
-  console.log(id);
-  return json(await getPosts(id));
+  const { cursor } = params;
+  return json(await getPosts(cursor));
 };
 
 export default function ListEntries() {
@@ -50,7 +49,7 @@ export default function ListEntries() {
         );
       })}
       <div className="flex w-full space-x-4 justify-end pt-12">
-        <Link to="../1">
+        <Link to="../0">
           <button className="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +67,7 @@ export default function ListEntries() {
             </svg>
           </button>
         </Link>
-        <Link to={cursor ? `../${cursor}` : "/1"}>
+        <Link to={cursor ? `../${cursor}` : "/0"}>
           <button className="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">
             <svg
               xmlns="http://www.w3.org/2000/svg"
