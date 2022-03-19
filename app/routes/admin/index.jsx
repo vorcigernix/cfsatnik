@@ -1,5 +1,7 @@
-import { redirect } from "remix";
+import { loader }, Cursor from "remix";
 
-export default function RedirPage() {
-  return null;
-}
+export {
+  loader
+};
+export default Cursor;
+
