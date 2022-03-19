@@ -1,7 +1,4 @@
-import { loader }, Cursor from "remix";
+import { loader, ListEntries } from "./$cursor";
 
-export {
-  loader
-};
-export default Cursor;
-
+export { loader };
+export default ListEntries;
